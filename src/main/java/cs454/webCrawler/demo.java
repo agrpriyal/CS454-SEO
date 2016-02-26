@@ -22,7 +22,7 @@ public class demo {
 	
 	public static void main( String[] args ) throws IOException, SAXException, TikaException, ParseException, JSONException
     {
-		File file = new File("C:/Users/Volfurious/Desktop/test.html");//file path
+		File file = new File("C:/Users/Volfurious/Desktop/test.html");//file path 
 		WordCounter word = new WordCounter(file);
 		
 		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
