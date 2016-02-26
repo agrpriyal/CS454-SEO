@@ -24,20 +24,22 @@ public class demo {
 	@SuppressWarnings("unchecked")
 	public static void main( String[] args ) throws IOException, SAXException, TikaException, ParseException, JSONException
     {
-		File file = new File("C:/Users/Volfurious/Desktop/testfiles");//file path 
+		File file = new File("C:/Users/Volfurious/Desktop/testfiles");//folder path
 		File[] htmlFiles = file.listFiles(new FilenameFilter(){
 			public boolean accept(File dir, String name){
 				return name.endsWith("html");
 			}
 		});
 		
+		int fileCounter = 0;
 		JSONObject finalObj = new JSONObject();
 		for (File f: htmlFiles){
 			WordCounter word = new WordCounter(f);
 			finalObj.put(f.getName(), word.getJson());
+			fileCounter++;
 		}
 		
-		WeightCalculator wc = new WeightCalculator("dSg cAt mice mice", finalObj, 20);
+		WeightCalculator wc = new WeightCalculator("name top hot account", finalObj, fileCounter);
 		//System.out.println(wc.getQuery().toString());
 		//WordCounter word = new WordCounter(file);
 		
@@ -49,23 +51,5 @@ public class demo {
 		Object obj = parser.parse(pretJson);
 		JSONObject testObj = (JSONObject) obj;
 		*/
-
-		for (@SuppressWarnings("rawtypes")
-		Iterator iterator = finalObj.keySet().iterator(); iterator.hasNext();){
-			String key = (String) iterator.next();
-			System.out.println(key.toString());
-			/*
-			JSONObject innerObj = (JSONObject) testObj.get(key);
-			
-			JSONArray pos = (JSONArray) innerObj.get("position");
-			@SuppressWarnings("unchecked")
-			Iterator<String> numIterator = pos.iterator();
-			List<Integer> tempList = new ArrayList<Integer>();//this is the list that contains all the position of the word
-			while (numIterator.hasNext()){
-				tempList.add(Integer.parseInt(numIterator.next()));
-			}
-			System.out.println(innerObj.get("word") + ": " + innerObj.get("frequency") + " " + tempList.toString());
-			*/
-		}
     }
 }

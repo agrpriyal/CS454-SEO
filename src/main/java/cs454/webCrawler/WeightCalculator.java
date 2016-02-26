@@ -3,7 +3,7 @@ package cs454.webCrawler;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.LinkedList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -13,24 +13,45 @@ public class WeightCalculator {
 
 	private int numberOfDocuments = 0;
 	private JSONObject documents;
-	private List<String> listOfWords = new ArrayList<String>();//change this to set, so that it doesn't have repeating words
 	private Set<String> query = new HashSet<String>();
 	
 	public WeightCalculator(String queryIn, JSONObject JObj, int numberOfDocuments){
 		this.numberOfDocuments = numberOfDocuments;
 		this.documents = JObj;
 		query.addAll(Arrays.asList(queryIn.toLowerCase().split(" ")));
-	}
-	
-	//find all the words from all the documents
-	public void findWords(){
 		
+		for (String keyword: query){
+			calcScores(documents, keyword);
+		}
 	}
 	
-	public double calculateWeight(JSONObject currentDoc, String word){
-		double df = 0;
+	@SuppressWarnings("unchecked")
+	public void calcScores(JSONObject documentsIn, String keyword){
+		//double score = 0;
+		double occurencesInDocuments = 0;
+		List<JSONObject> documentsContainWord = new ArrayList<JSONObject>();
+		for (@SuppressWarnings("rawtypes")
+		Iterator iterator = documentsIn.keySet().iterator(); iterator.hasNext();){
+			String key = (String) iterator.next();
+			JSONObject documentWords = (JSONObject) documentsIn.get(key);
+			if(documentWords.containsKey(keyword)){
+				occurencesInDocuments++;
+				documentWords.put("document name", key.toString());
+				documentsContainWord.add(documentWords);
+			}
+		}
+		for (JSONObject currentObj: documentsContainWord){
+			System.out.println(currentObj.get("document name") + " " + keyword + ": " + calculateWeight(currentObj, keyword, occurencesInDocuments));
+			//prints the weight of each word in the documents it appeared in
+			//score += calculateWeight(currentObj, keyword, occurencesInDocuments);
+		}
+		//System.out.println(keyword + ": " + score);
+	}
+	
+	public double calculateWeight(JSONObject currentDoc, String word, double df){
 		double idf = Math.log10(numberOfDocuments/df);
-		double frequency = 0;
+		JSONObject keywordJsonObj = (JSONObject) currentDoc.get(word);
+		int frequency = (int) keywordJsonObj.get("frequency");
 		double tf = Math.log(1 + frequency);
 		double weight = tf * idf;
 		return weight;
