@@ -3,20 +3,13 @@ package cs454.webCrawler;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 import org.apache.tika.exception.TikaException;
 import org.json.JSONException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.xml.sax.SAXException;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class demo {
 	static JSONArray jsonArray = new JSONArray();
@@ -39,11 +32,23 @@ public class demo {
 			fileCounter++;
 		}
 		
-		WeightCalculator wc = new WeightCalculator("name top hot account", finalObj, fileCounter);
-		//System.out.println(wc.getQuery().toString());
-		//WordCounter word = new WordCounter(file);
+		WeightCalculator wc = new WeightCalculator(finalObj, fileCounter);
+		JSONObject objTemp = wc.getNormalizedJson();
+		System.out.println(objTemp);
 		
 		/*
+		 * 
+		 * NOTE: BUG
+		 * if wc.getNormalizedJson is called after wc.getJson, the json object called from wc.getJson will be normalized!!
+		 * not sure why this is happening, unable to fix it.
+		 * if regular json file is needed, only call the method wc.getJson, do not call wc.getNormalizedJson before or after under any circumstances.
+		System.out.println(objTemp.get("Test3.html"));
+		JSONObject objTemp2 = wc.getNormalizedJson();
+		System.out.println(objTemp.get("Test3.html"));
+		
+		//System.out.println(objTemp2.get("Test3.html"));
+		//System.out.println(wc.getMax());
+		
 		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
 		String pretJson = prettyGson.toJson(word.getJson());
 		
