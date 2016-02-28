@@ -85,14 +85,10 @@ public class WordCounter {
 				}
 			}
 			 if (counter != 0){
-				 //JSONObject obj = new JSONObject();
-				 //obj.put("word", unique);
-				 
 				 JSONObject elements = new JSONObject();
 				 elements.put("frequency", counter);
 				 elements.put("position", positionList);
 				 elements.put("word", unique);
-				 //obj.put("elements", elements);
 				 jsonObject.put(unique, elements);
 			 }
 			
