@@ -37,7 +37,7 @@ public class demo {
 		System.out.println(objTemp);
 		
 		
-		LinkAnalysis la = new LinkAnalysis("C:/Users/Volfurious/Desktop/testfiles");
+		//LinkAnalysis la = new LinkAnalysis("C:/Users/Volfurious/Desktop/testfiles");
 		
 		/*
 		 * 
