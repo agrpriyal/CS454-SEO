@@ -36,6 +36,9 @@ public class demo {
 		JSONObject objTemp = wc.getNormalizedJson();
 		System.out.println(objTemp);
 		
+		
+		LinkAnalysis la = new LinkAnalysis("C:/Users/Volfurious/Desktop/testfiles");
+		
 		/*
 		 * 
 		 * NOTE: BUG
