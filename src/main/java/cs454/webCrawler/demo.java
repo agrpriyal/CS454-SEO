@@ -3,6 +3,8 @@ package cs454.webCrawler;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.tika.exception.TikaException;
 import org.json.JSONException;
@@ -36,6 +38,13 @@ public class demo {
 		JSONObject objTemp = wc.getNormalizedJson();
 		System.out.println(objTemp);
 		
+		Map<String, String> urlMap = new HashMap<String, String>();
+		urlMap.put("uuid1.html", "http://www.pandora.com");
+		urlMap.put("uuid2.html", "http://www.pandora.com/about");
+		urlMap.put("uuid3.html", "http://www.pandora.com/one/gift");
+		
+		LinkAnalysis la = new LinkAnalysis("C:/Users/Volfurious/Desktop/linktest", (HashMap<String, String>) urlMap);
+		System.out.println(la.getInMap().toString());
 		/*
 		 * 
 		 * NOTE: BUG
