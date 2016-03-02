@@ -20,7 +20,12 @@ public class LinkAnalysis {
 	private Map<String, String> urlMap = new HashMap<String, String>();
 	private Map<String, HashSet<String>> outMap = new HashMap<String, HashSet<String>>();
 	private Map<String, HashSet<String>> inMap = new HashMap<String, HashSet<String>>();
+	private Map<String, HashSet<String>> translatedMap = new HashMap<String, HashSet<String>>();
+	private Map<String, Double> previousScores = new HashMap<String, Double>();
+	private Map<String, Double> pageRankScores = new HashMap<String, Double>();
+	private Map<String, Double> normalizedPageRankScores = new HashMap<String, Double>();
 	
+	@SuppressWarnings("rawtypes")
 	public LinkAnalysis(String directory, HashMap<String, String> urlMap){
 		File file = new File(directory);
 		this.urlMap.putAll(urlMap);
@@ -33,6 +38,22 @@ public class LinkAnalysis {
 			parse(f);
 		}
 		findInLinks();
+		
+		Map<String, Double> initialScores = new HashMap<String, Double>();
+		Iterator iterator = urlMap.entrySet().iterator();
+		while (iterator.hasNext()){
+			Map.Entry entry = (Map.Entry)iterator.next();
+			initialScores.put((String) entry.getValue(), 1.0/urlMap.size());
+			previousScores.put((String) entry.getValue(), 0.0);
+		}
+		translateMap();
+		pageRankScores = findScores((HashMap<String, Double>) initialScores);
+	}
+	
+	public void translateMap(){
+		for(Map.Entry<String, String> entry: urlMap.entrySet()){
+			translatedMap.put(entry.getValue(), outMap.get(entry.getKey()));
+		}
 	}
 	
 	public void parse(File fileIn){
@@ -104,7 +125,57 @@ public class LinkAnalysis {
 		}
 	}
 	
+	@SuppressWarnings("rawtypes")
+	public HashMap<String, Double> findScores(HashMap<String, Double> currentScoresArray){
+		boolean converged = true;
+		for (Map.Entry<String, Double> entry: currentScoresArray.entrySet()){
+			double converge = Math.abs(currentScoresArray.get(entry.getKey()) - previousScores.get(entry.getKey()));
+			if (converge > 0.01){//0.1 or 0.01, anything higher or lower is not recommended
+				converged = false;
+			}
+		}
+		if (converged){
+			return currentScoresArray;
+		}
+		Map<String, Double> updatedScores = new HashMap<String, Double>();
+		Iterator iterator = currentScoresArray.entrySet().iterator();
+		while (iterator.hasNext()){
+			Map.Entry entry = (Map.Entry)iterator.next();
+			HashSet<String> referers = inMap.get(entry.getKey());
+			Double newScore = 0.0;
+			for (String referPage: referers){
+				newScore += currentScoresArray.get(referPage)/translatedMap.get(referPage).size();
+			}
+			updatedScores.put((String) entry.getKey(), newScore);
+		}
+		previousScores.clear();
+		previousScores.putAll(currentScoresArray);
+		return findScores((HashMap<String, Double>) updatedScores);
+	}
+	
+	public void normalizeScores(){
+		double max = 0.0;
+		for(Map.Entry<String, Double> entry: pageRankScores.entrySet()){
+			if(entry.getValue() > max){
+				max = entry.getValue();
+			}
+		}
+		for(Map.Entry<String, Double> entry: pageRankScores.entrySet()){
+			normalizedPageRankScores.put(entry.getKey(), entry.getValue()/max);
+		}
+	}
+	
 	public Map<String, HashSet<String>> getInMap(){
 		return inMap;
+	}
+	public Map<String, HashSet<String>> getOutMap(){
+		return outMap;
+	}
+	public HashMap<String, Double> getScores(){
+		return (HashMap<String, Double>) pageRankScores;
+	}
+	public HashMap<String, Double> getNormalizedScores(){
+		normalizeScores();
+		return (HashMap<String, Double>) normalizedPageRankScores;
 	}
 }

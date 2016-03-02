@@ -38,13 +38,19 @@ public class demo {
 		JSONObject objTemp = wc.getNormalizedJson();
 		System.out.println(objTemp);
 		
+		//in roder to test link analysis, you need to supply the mapping of document name with the document's URL. (WebAdress)
+		//program will receive an error if the size of the urlMap doesn't match the number of documents in the directory folder.
 		Map<String, String> urlMap = new HashMap<String, String>();
 		urlMap.put("uuid1.html", "http://www.pandora.com");
 		urlMap.put("uuid2.html", "http://www.pandora.com/about");
 		urlMap.put("uuid3.html", "http://www.pandora.com/one/gift");
+		urlMap.put("uuid4.html", "http://www.pandora.com/legal");
 		
 		LinkAnalysis la = new LinkAnalysis("C:/Users/Volfurious/Desktop/linktest", (HashMap<String, String>) urlMap);
-		System.out.println(la.getInMap().toString());
+		System.out.println("Original result" + " " + la.getScores().toString());
+		System.out.println("Normalized result" + " " + la.getNormalizedScores().toString());
+		//System.out.println(la.getInMap().toString());
+		//System.out.println(la.getOutMap().toString());
 		/*
 		 * 
 		 * NOTE: BUG
