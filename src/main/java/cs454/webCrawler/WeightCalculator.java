@@ -55,6 +55,9 @@ public class WeightCalculator {
 			if(documentWords.containsKey(keyword)){
 				occurencesInDocuments++;
 				documentWords.put("document name", key.toString());
+				JSONObject positionGet = (JSONObject) documentWords.get(keyword);
+				//System.out.println(positionGet.get("position"));
+				documentWords.put("position", positionGet.get("position"));
 				documentsContainWord.add(documentWords);
 			}
 		}
@@ -63,6 +66,7 @@ public class WeightCalculator {
 			wordInfo.put("word", keyword);
 			wordInfo.put("tf-idf", calculateWeight(currentObj, keyword, occurencesInDocuments));
 			wordInfo.put("document", currentObj.get("document name"));
+			wordInfo.put("position", currentObj.get("position"));
 			jsonList.add(wordInfo);
 			//System.out.println(currentObj.get("document name") + " " + keyword + ": " + calculateWeight(currentObj, keyword, occurencesInDocuments));
 		}
@@ -126,6 +130,7 @@ public class WeightCalculator {
 			tempObj.put("word", objectWord.get("word"));
 			tempObj.put("tf-idf", tfidf);
 			tempObj.put("document", objectWord.get("document"));
+			tempObj.put("position", objectWord.get("position"));
 			normalizedJsonList.add(tempObj);
 		}
 		jsonCreator(true);

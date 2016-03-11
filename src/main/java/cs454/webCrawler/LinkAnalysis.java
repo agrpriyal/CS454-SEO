@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import org.json.simple.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -177,5 +178,25 @@ public class LinkAnalysis {
 	public HashMap<String, Double> getNormalizedScores(){
 		normalizeScores();
 		return (HashMap<String, Double>) normalizedPageRankScores;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public JSONObject getJson(){
+		normalizeScores();
+		JSONObject finalJsonScore = new JSONObject();
+		for(Map.Entry<String, Double> entry: normalizedPageRankScores.entrySet()){
+			JSONObject scoreJson = new JSONObject();
+			scoreJson.put("score", entry.getValue().toString());
+			String documentName = "";
+			for(Map.Entry<String, String> entry2: urlMap.entrySet()){
+				if (entry.getKey().equals(entry2.getValue())){
+					documentName = entry2.getKey();
+				}
+			}
+			scoreJson.put("document", documentName);
+			scoreJson.put("url", entry.getKey());
+			finalJsonScore.put(entry.getKey(), scoreJson);
+		}
+		return finalJsonScore;
 	}
 }
