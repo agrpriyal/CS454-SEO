@@ -1,10 +1,26 @@
 package cs454.webCrawler;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStream;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.JOptionPane;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -25,6 +41,11 @@ import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 public class SearchGui extends Application{
+	private static JSONParser parser = new JSONParser();
+	private static JSONObject jsonScores = new JSONObject();
+	private static Map<String, Page> linkMap = new HashMap<String, Page>();
+	private static Map<String, HashMap<String, Word>> weightMap = new HashMap<String, HashMap<String, Word>>();
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		BorderPane bp = new BorderPane();
@@ -63,6 +84,21 @@ public class SearchGui extends Application{
 		final Hyperlink link = new Hyperlink();
 		vp.getChildren().add(link);
 		
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("C:/Users/Volfurious/Desktop/json/score json.txt"));
+			Gson gson = new GsonBuilder().create();
+			ScoreInfo scoreInfo = gson.fromJson(br, ScoreInfo.class);
+			linkMap = scoreInfo.getLink();
+			weightMap = scoreInfo.getWeight();
+			//HashMap<String, Word> wordMap = weightMap.get("uuid3.html");
+			//Word word = wordMap.get("gift");
+			//Page page = linkMap.get("http://www.pandora.com");
+			//System.out.println(word.getTfidf() + " " + word.getDocument());
+			//System.out.println(page.getUrl() + " " + page.getScore() + " " + page.getDocument());
+		} catch (Exception e){
+			e.printStackTrace();
+		}
+		
 		submit.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<Event>(){
 			@Override
 			public void handle(Event event) {
@@ -74,6 +110,7 @@ public class SearchGui extends Application{
 				link.setOnAction(new EventHandler<ActionEvent>(){
 					public void handle(ActionEvent t){
 						getHostServices().showDocument(link.getText());
+						System.out.println(jsonScores.get("link"));
 					}
 				});
 				
@@ -85,5 +122,10 @@ public class SearchGui extends Application{
 	}
 	public static void main(String[] args){
 		Application.launch(args);
+	}
+	
+
+	public void getLinks(String query){
+		List<String> words = new LinkedList<String>(Arrays.asList(query.split(" ")));
 	}
 }

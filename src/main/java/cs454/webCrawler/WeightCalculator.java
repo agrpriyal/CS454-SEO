@@ -64,7 +64,7 @@ public class WeightCalculator {
 		for (JSONObject currentObj: documentsContainWord){
 			JSONObject wordInfo = new JSONObject();
 			wordInfo.put("word", keyword);
-			wordInfo.put("tf-idf", calculateWeight(currentObj, keyword, occurencesInDocuments));
+			wordInfo.put("tfidf", calculateWeight(currentObj, keyword, occurencesInDocuments));
 			wordInfo.put("document", currentObj.get("document name"));
 			wordInfo.put("position", currentObj.get("position"));
 			jsonList.add(wordInfo);
@@ -84,7 +84,7 @@ public class WeightCalculator {
 	public double getMax(){
 		double max = 0;
 		for (JSONObject obj: jsonList){
-			double value = (double) obj.get("tf-idf");
+			double value = (double) obj.get("tfidf");
 			if (value > max){
 				max = value;
 			}
@@ -125,10 +125,10 @@ public class WeightCalculator {
 	@SuppressWarnings("unchecked")
 	public JSONObject getNormalizedJson(){
 		for (JSONObject objectWord: jsonList){
-			double tfidf = (double) objectWord.get("tf-idf")/getMax();
+			double tfidf = (double) objectWord.get("tfidf")/getMax();
 			JSONObject tempObj = new JSONObject();
 			tempObj.put("word", objectWord.get("word"));
-			tempObj.put("tf-idf", tfidf);
+			tempObj.put("tfidf", tfidf);
 			tempObj.put("document", objectWord.get("document"));
 			tempObj.put("position", objectWord.get("position"));
 			normalizedJsonList.add(tempObj);
