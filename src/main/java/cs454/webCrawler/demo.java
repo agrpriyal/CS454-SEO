@@ -1,12 +1,15 @@
 package cs454.webCrawler;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.tika.exception.TikaException;
 import org.json.JSONException;
@@ -24,7 +27,10 @@ public class demo {
 	@SuppressWarnings("unchecked")
 	public static void main( String[] args ) throws IOException, SAXException, TikaException, ParseException, JSONException
     {
-		File file = new File("C:/Users/Volfurious/Desktop/linktest");//folder path
+		//C:/Users/Volfurious/Desktop/test/content/files
+		//C:\Users\Volfurious\Desktop\linktest
+		String filePath = "C:/Users/Volfurious/Desktop/test/content/files";
+		File file = new File(filePath);//folder path
 		File[] htmlFiles = file.listFiles(new FilenameFilter(){
 			public boolean accept(File dir, String name){
 				return name.endsWith("html");
@@ -38,20 +44,31 @@ public class demo {
 			finalObj.put(f.getName(), word.getJson());
 			fileCounter++;
 		}
-		
+		System.out.println(fileCounter);
 		WeightCalculator wc = new WeightCalculator(finalObj, fileCounter);
 		JSONObject objTemp = wc.getNormalizedJson();
-		//System.out.println(objTemp);
-		
+
 		//in roder to test link analysis, you need to supply the mapping of document name with the document's URL. (WebAdress)
 		//program will receive an error if the size of the urlMap doesn't match the number of documents in the directory folder.
 		Map<String, String> urlMap = new HashMap<String, String>();
-		urlMap.put("uuid1.html", "http://www.pandora.com");
-		urlMap.put("uuid2.html", "http://www.pandora.com/about");
-		urlMap.put("uuid3.html", "http://www.pandora.com/one/gift");
-		urlMap.put("uuid4.html", "http://www.pandora.com/legal");
+		//urlMap.put("uuid1.html", "http://www.pandora.com");
+		//urlMap.put("uuid2.html", "http://www.pandora.com/about");
+		//urlMap.put("uuid3.html", "http://www.pandora.com/one/gift");
+		//urlMap.put("uuid4.html", "http://www.pandora.com/legal");
 		
-		LinkAnalysis la = new LinkAnalysis("C:/Users/Volfurious/Desktop/linktest", (HashMap<String, String>) urlMap);
+		Properties properties = new Properties();
+		properties.load(new FileInputStream("map.properties"));
+		int remover = 0;
+		for (String key : properties.stringPropertyNames()) {
+			//if (remover == 0){
+			//	remover++;
+			//	continue;
+			//}
+			//else{
+				urlMap.put(key, properties.get(key).toString());
+				//}
+			}
+		LinkAnalysis la = new LinkAnalysis(filePath, (HashMap<String, String>) urlMap);
 		JSONObject linkJson = la.getJson();
 		
 		JSONObject merged = new JSONObject();
@@ -67,7 +84,15 @@ public class demo {
 			outputJson.flush();
 			outputJson.close();
 		}
-		
+		/*
+		Properties properties = new Properties();
+
+		for (Map.Entry<String,String> entry : urlMap.entrySet()) {
+		    properties.put(entry.getKey(), entry.getValue());
+		}
+
+		properties.store(new FileOutputStream("map.properties"), null);
+		*/
 		/*
 		for (@SuppressWarnings("rawtypes")
 		Iterator iterator = linkJson.keySet().iterator(); iterator.hasNext();){

@@ -105,7 +105,7 @@ public class LinkAnalysis {
 								ref.add((String) urlMap.get(keyString));
 							}
 						}
-						else if (linkString.charAt(linkString.length() - 1) == '#'){
+						else if (linkString.charAt(linkString.length() - 1) == '#' && linkString.length() > 1){
 							String tempString = linkString.substring(0, linkString.length() - 1);
 							if (tempString.equals(currentUrl)){
 								String keyString = (String) outEntry.getKey();

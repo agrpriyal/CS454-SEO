@@ -31,6 +31,7 @@ public class WebCrawler {
 	
 	String domain = "";
 	List<String> linkList = new ArrayList<String>();
+	static Map<String, String> urlMap= new HashMap<String, String>();
 	int i;
 
 	public void crawl(String crawlUrl) throws MalformedURLException {
@@ -62,7 +63,7 @@ public class WebCrawler {
 
 		List<Link> links = linkHandler.getLinks();
 		
-		if (i<10) {
+		if (i<1) {
 
 		if (links != null && links.size() > 0) {
 			for (Link l : links) {
@@ -192,7 +193,7 @@ public class WebCrawler {
 		    String fileName2 = uuid + ".html";
 		    String localpath2 = System.getProperty("user.dir")+"\\content\\files\\"+ fileName2;		    
 		    File file2 = new File(localpath2);
-		    
+		    urlMap.put(fileName2, url1);
 		    		    
 		    String fileName="";
 		    String fileType="";		

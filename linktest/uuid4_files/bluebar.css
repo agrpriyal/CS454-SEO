@@ -1,0 +1,3383 @@
+
+#pandoraRibbonContainer {
+	display: none;
+	position:relative;/* pos + z-index to create a new stacking context */
+	z-index:5000;
+}
+
+.ribbonContent {
+	width: 100%;
+}
+
+.ribbon {
+	display: none;
+	position: relative;
+	width: 100%;
+}
+
+#accountMessageRibbon {
+	display: none;
+	height: 42px;
+	width: 100%;
+	background: url("/static/ribbon/account-msg-bg.jpg") repeat-x top;
+}
+
+.pandora_bar_container div,
+	.pandora_bar_container span,
+	.pandora_bar_container strong {
+	background: none;
+	border-spacing: 0;
+	border: 0px;
+	direction: ltr;
+	font-style: normal;
+	font-variant: normal;
+	letter-spacing: normal;
+	line-height: 1;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+	text-shadow: none;
+	text-transform: none;
+	visibility: visible;
+	white-space: normal;
+	word-spacing: normal;
+	vertical-align: baseline;
+}
+
+.pandora_bar_container {
+	position: relative;
+	top: 0px;
+	height: 50px;
+	left: 0px !important;
+	right: 0px !important;
+	padding: 0px 15px !important;
+	margin: 0px !important;
+	vertical-align: middle !important;
+	overflow: hidden !important;
+}
+
+#accountMessageRibbon .pandora_bar_container {
+	height: 42px;
+}
+
+.pandora_bar_container_ie6 {
+	position: absolute;
+	top: expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px" : body.scrollTop+"px");
+}
+
+.pandora_bar {
+	position: relative;
+	margin: auto;
+	height: 100%;
+	width: 100%;
+	padding: 6px 0 0 0 !important;
+	background: none;
+	color: #fff !important;
+}
+
+.pandora_bar_message, .account_message {
+	display: inline;
+	position: relative;
+	top: 8px;
+	left: 48px;
+	height: 16px;
+	font-family: "helvetica", sans-serif !important;
+	font-size: 13px !important;
+	font-style: normal !important;
+	font-variant: normal !important;
+	font-weight: bold !important;
+	letter-spacing: normal !important;
+	line-height: 1 !important;
+	text-decoration: none !important;
+	text-indent: 0 !important;
+	text-shadow: none !important;
+	text-transform: none !important;
+	white-space: normal !important;
+	word-spacing: normal !important;
+}
+
+.account_message {
+	float: left;
+}
+
+.account_message_learnmore {
+	position: relative;
+	float: left;
+	top: 3px;
+	left: 60px;
+}
+
+.account_message_close {
+	float: right;
+	position: relative;
+	top: 6px;
+}
+
+.account_message_close .account_message_close_txt {
+	display:none;
+}
+
+.renewal_logo {
+	top: -2px;
+	margin-right: 30px;
+}
+
+.renewal_buttons {
+	display: inherit;
+	position: relative;
+	top: -10px;
+	left: 514px;
+}
+
+.renewal_button {
+	height: 20px;
+	border: none;
+}
+
+#facebookRibbon {
+	height:42px;
+	background-color:#3b5998;
+}
+
+#fbRibbonName {
+	font-size: 13px !important;
+	color: #fff !important;
+}
+
+.fb_connect_bar_container div,
+	.fb_connect_bar_container span,
+	.fb_connect_bar_container a,
+	.fb_connect_bar_container img,
+	.fb_connect_bar_container strong {
+	background: none;
+	border-spacing: 0;
+	border: 0px;
+	direction: ltr;
+	font-style: normal;
+	font-variant: normal;
+	letter-spacing: normal;
+	line-height: 1;
+	margin: 0;
+	overflow: visible;
+	padding: 0;
+	text-align: left;
+	text-decoration: none;
+	text-indent: 0;
+	text-shadow: none;
+	text-transform: none;
+	visibility: visible;
+	white-space: normal;
+	word-spacing: normal;
+	vertical-align: baseline;
+}
+
+.fb_connect_bar_container {
+	position: fixed;
+	top: 0px;
+	left: 0px !important;
+	right: 0px !important;
+	height: 42px !important;
+	padding: 0px 25px !important;
+	margin: 0px !important;
+	vertical-align: middle !important;
+	border-bottom: 1px solid #333 !important;
+	background: #3b5998 !important;
+	overflow: hidden !important;
+}
+
+.fb_connect_bar_container_ie6 {
+	position: absolute;
+	top: expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px" : body.scrollTop+"px");
+}
+
+.fb_connect_bar {
+	position: relative;
+	margin: auto;
+	height: 100%;
+	width: 100%;
+	padding: 6px 0 0 0 !important;
+	background: none;
+	color: #fff !important;
+	font-family: "lucida grande", tahoma, verdana, arial, sans-serif !important;
+	font-size: 13px !important;
+	font-style: normal !important;
+	font-variant: normal !important;
+	font-weight: normal !important;
+	letter-spacing: normal !important;
+	line-height: 1 !important;
+	text-decoration: none !important;
+	text-indent: 0 !important;
+	text-shadow: none !important;
+	text-transform: none !important;
+	white-space: normal !important;
+	word-spacing: normal !important;
+}
+
+.fb_connect_bar a:hover {
+	color: #fff;
+}
+
+.fb_connect_bar .fb_profile img {
+	height: 30px;
+	width: 30px;
+	vertical-align: middle;
+	margin: 0px 6px 5px 0px;
+}
+
+.fb_connect_bar div a, .fb_connect_bar span, .fb_connect_bar span a {
+	color: #bac6da;
+	font-size: 11px;
+	text-decoration: none;
+}
+
+.fb_connect_bar .fb_buttons {
+	float: right;
+	margin-top: 7px;
+}
+
+
+
+#cappingRibbon, #renewalRibbon, #trialRibbon, #paymentBackedTrialRibbon {
+    height:42px;
+    background-color: #f8f8f8;
+}
+
+.bluebar_button_container {
+    position: relative;
+    left: 710px;
+    top: -8px;
+}
+
+.bluebar_btn_green {
+    display: inline;
+    cursor: pointer;
+    height: 24px;
+    font-family: "Helvetica";
+    font-size: 12px;
+    padding: 5px 14px !important;
+    margin-left: 5px !important;
+    border: 1px solid rgb(5,153,0) !important;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    background-color: rgb(51,153,0) !important;
+    color: white;
+}
+
+.bluebar_btn_white {
+    display: inline;
+    cursor: pointer;
+    height: 24px;
+    font-family: "Helvetica";
+    font-size: 12px;
+    padding: 5px 14px !important;
+    margin-left: 5px !important;
+    border: 1px solid rgb(184,184,184) !important;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    background-color: rgb(255,255,255) !important;
+    color: rgb(184,184,184);
+}
+
+.capping_buttons, .renewal_buttons {
+	position: relative;
+	top: -10px;
+	left: 730px;
+    border: none;
+}
+
+.capping_buttons .capping_more_info, .renewal_buttons .renew_more_info {
+	float:left;
+	display:inline;
+    background: url('/img/moreinfo-green.png') no-repeat;
+    cursor: pointer;
+    height:24px;
+    width:80px;
+}
+
+.trial_buttons {
+	display: inherit;
+	position: relative;
+	width:104px;
+	top: -24px;
+	left: 700px;
+	/*float: right;
+	right: 30px;*/
+}
+
+.trial_buttons .trial_upgrade {
+	/*float:left;
+	display:inline; */
+	background: url('/img/content/upgradeNow-btn.png') no-repeat;
+	cursor: pointer;
+	height:27px;
+	width:104px;
+	margin-top: 12px;
+}
+
+.trial_message_close {
+	float: right;
+	position: relative;
+	top: 6px;
+	cursor: pointer;
+}
+
+.trial_buttons .trial_upgrade:hover {
+	background: url('/img/content/upgradeNow-btn_hover.png') no-repeat;
+}
+
+#trialRibbon #trialTxt {
+	font-weight: normal;
+}
+
+
+.capping_buttons .capping_no_thanks, .renewal_buttons .renewal_no_thanks {
+    float:left;
+	display:inline;
+    margin-left:5px;
+    background: url('/img/nothanks.png') no-repeat;
+    cursor: pointer;
+    height:24px;
+    width:80px;
+}
+
+.pandora_bar_message {
+    color:#002854;
+}
+
+
+/*
+Custom Bluebars
+----------------------------------------------------------------------------- */
+
+
+/* invalid_demographic_info */
+.invalid_demographic_info .ribbonContent {
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_demographic_info #accountMessageRibbon {
+    background: #00adee;
+    height: 42px;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_demographic_info #pandoraAccountMessageOuterWrapper {
+    height:42px !important;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_demographic_info .pandora_bar {
+    height:26px !important;
+    padding:6px 0 !important;
+    margin:0 !important;
+    position: relative;
+    left: -42px;
+}
+
+.invalid_demographic_info #accountMessageRibbon .pandora_bar_container {
+    background:none !important;
+    background-repeat:  no-repeat !important;
+    background-position: 0 0 !important;
+    padding-top:1px;
+    height:42px;
+}
+
+.invalid_demographic_info #pandoraAccountMessageOuterWrapper {
+    margin:0 auto !important;
+    width:1070px;
+    position:static !important;
+}
+
+.invalid_demographic_info .account_message {
+    margin-left: 300px;
+    color:#ffffff;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.invalid_demographic_info .account_message_learnmore {
+    height:24px;
+    width:90px;
+    text-indent:-9999px;
+    background: url(/static/ribbon/nag-bluebar-update.png) no-repeat 0 0;
+}
+
+.invalid_demographic_info .account_message_close {
+    display:none;
+}
+
+.invalid_demographic_info .nice_account_message_close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    background-image: url(/static/ribbon/nag-bluebar-close.png);
+}
+
+
+/* invalid_email */
+.invalid_email .ribbonContent {
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_email #accountMessageRibbon {
+    background: #00adee;
+    height: 42px;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_email #pandoraAccountMessageOuterWrapper {
+    height:42px !important;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_email .pandora_bar {
+    height:26px !important;
+    padding:6px 0 !important;
+    margin:0 !important;
+    position: relative;
+    left: -42px;
+}
+
+.invalid_email #accountMessageRibbon .pandora_bar_container {
+    background:none !important;
+    background-repeat:  no-repeat !important;
+    background-position: 0 0 !important;
+    padding-top:1px;
+    height:42px;
+}
+
+.invalid_email #pandoraAccountMessageOuterWrapper {
+    margin:0 auto !important;
+    width:1070px;
+    position:static !important;
+}
+
+.invalid_email .account_message {
+    margin-left: 360px;
+    color:#ffffff;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.invalid_email .account_message_learnmore {
+    height:24px;
+    width:90px;
+    text-indent:-9999px;
+    background: url(/static/ribbon/nag-bluebar-update.png) no-repeat 0 0;
+}
+
+.invalid_email .account_message_close {
+    display:none;
+}
+
+
+/* invalid_zip_code */
+.invalid_zip_code .ribbonContent {
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_zip_code #accountMessageRibbon {
+    background: #00adee;
+    height: 42px;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_zip_code #pandoraAccountMessageOuterWrapper {
+    height:42px !important;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.invalid_zip_code .pandora_bar {
+    height:26px !important;
+    padding:6px 0 !important;
+    margin:0 !important;
+    position: relative;
+    left: -42px;
+}
+
+.invalid_zip_code #accountMessageRibbon .pandora_bar_container {
+    background:none !important;
+    background-repeat:  no-repeat !important;
+    background-position: 0 0 !important;
+    padding-top:1px;
+    height:42px;
+}
+
+.invalid_zip_code #pandoraAccountMessageOuterWrapper {
+    margin:0 auto !important;
+    width:1070px;
+    position:static !important;
+}
+
+.invalid_zip_code .account_message {
+    margin-left: 360px;
+    color:#ffffff;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.invalid_zip_code .account_message_learnmore {
+    height:24px;
+    width:90px;
+    text-indent:-9999px;
+    background: url(/static/ribbon/nag-bluebar-update.png) no-repeat 0 0;
+}
+
+.invalid_zip_code .account_message_close {
+    display:none;
+}
+
+.invalid_zip_code .nice_account_message_close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    background-image: url(/static/ribbon/nag-bluebar-close.png);
+}
+
+
+/* update_demographic_info */
+.update_demographic_info .ribbonContent {
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.update_demographic_info #accountMessageRibbon {
+    background: #00adee;
+    height: 42px;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.update_demographic_info #pandoraAccountMessageOuterWrapper {
+    height:42px !important;
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.update_demographic_info .pandora_bar {
+    height:26px !important;
+    padding:6px 0 !important;
+    margin:0 !important;
+    position: relative;
+    left: -42px;
+}
+
+.update_demographic_info #accountMessageRibbon .pandora_bar_container {
+    background:none !important;
+    background-repeat:  no-repeat !important;
+    background-position: 0 0 !important;
+    padding-top:1px;
+    height:42px;
+}
+
+.update_demographic_info #pandoraAccountMessageOuterWrapper {
+    margin:0 auto !important;
+    width:1070px;
+    position:static !important;
+}
+
+.update_demographic_info .account_message {
+    margin-left: 300px;
+    color:#ffffff;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.update_demographic_info .account_message_learnmore {
+    height:24px;
+    width:90px;
+    text-indent:-9999px;
+    background: url(/static/ribbon/nag-bluebar-update.png) no-repeat 0 0;
+}
+
+.update_demographic_info .account_message_close {
+    display: none;
+}
+
+.update_demographic_info .nice_account_message_close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    height: 20px;
+    width: 20px;
+    background-image: url(/static/ribbon/nag-bluebar-close.png);
+}
+
+
+/* Valentine 2013 */
+.valentine2013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2013 #accountMessageRibbon {
+	background: #5f5b84;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2013 .pandora_bar {
+	height:28px !important;
+	padding:6px 0 !important;
+	margin:0 !important;
+}
+
+.valentine2013 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2013_valentine/bg_valentine_2013.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.valentine2013 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.valentine2013 .account_message {
+	margin-left: 356px; margin-right: 4px;
+	color: white;
+}
+
+.valentine2013 .account_message_learnmore {
+	height:30px;
+	width:96px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_valentine/btn_browse_now.png) no-repeat 0 0;
+	margin-top: -5px;
+}
+
+.valentine2013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+}
+/* valentine2013: hack to override close button */
+.valentine2013 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-4D4876.png') top left no-repeat;
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+.valentine2013 .account_message_close_img { display: none; }
+
+
+
+/* St Patrick's Day 2013 */
+.stpats2013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.stpats2013 #accountMessageRibbon {
+	background: #056b0b;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.stpats2013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.stpats2013 .pandora_bar {
+	height:28px !important;
+	padding:6px 0 !important;
+	margin:0 !important;
+}
+
+.stpats2013 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2013_stpats/bg_stpats_2013.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.stpats2013 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.stpats2013 .account_message {
+	margin-left: 277px; margin-right: 4px;
+	color: white;
+}
+
+.stpats2013 .account_message_learnmore {
+	height:22px;
+	width:90px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_stpats/btn_browse_now.png) no-repeat 0 0;
+}
+
+.stpats2013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+}
+/* stpats2013: hack to override close button */
+.stpats2013 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-25-percent.png') top left no-repeat;
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+.stpats2013 .account_message_close_img { display: none; }
+
+
+
+/* Comedy (April Fool's) 2013 */
+.comedy2013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.comedy2013 #accountMessageRibbon {
+	background: #b7dcf9;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.comedy2013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.comedy2013 .pandora_bar {
+	height:28px !important;
+	padding:6px 0 !important;
+	margin:0 !important;
+}
+
+.comedy2013 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2013_comedy/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.comedy2013 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.comedy2013 .account_message {
+	margin-left: 203px; margin-right: 0;
+	color: #101538;
+}
+
+.comedy2013 .account_message_learnmore {
+	height:22px;
+	width:90px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_comedy/btn_browse_now.png) no-repeat 0 0;
+}
+
+.comedy2013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* comedy2013: hack to override close button */
+.comedy2013 .account_message_close A {
+	background: transparent url('/static/ribbon/2013_comedy/btn_close.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.comedy2013 .account_message_close_img { display: none; }
+
+
+
+/* Summer 2013 */
+.summer2013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.summer2013 #accountMessageRibbon {
+	background: #C3A669;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.summer2013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.summer2013 .pandora_bar {
+	height:28px !important;
+	padding:6px 0 !important;
+	margin:0 !important;
+}
+
+.summer2013 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2013_summer/bg.jpg) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.summer2013 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.summer2013 .account_message {
+	margin-left: 280px;
+	margin-right: 15px;
+	color: white;
+	font-weight: normal !important;
+}
+
+.summer2013 .account_message_learnmore {
+	height:24px;
+	width:98px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_summer/btn_browse_now.png) no-repeat 0 0;
+}
+
+.summer2013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* summer2013: hack to override close button */
+.summer2013 .account_message_close A {
+	background: transparent url('/static/ribbon/2013_summer/btn_close.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.summer2013 .account_message_close_img { display: none; }
+
+
+/* Halloween 2013 */
+.halloween2013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.halloween2013 #accountMessageRibbon {
+	background: #030100;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.halloween2013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+	min-width: 970px;
+}
+
+.halloween2013 .pandora_bar {
+
+	background:none !important;
+	background-image: url(/static/ribbon/2013_halloween/bg_halloween_2013.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+
+	width: 1450px;
+	position: absolute;
+	left: 50%;
+	margin-left: -725px;
+}
+
+.halloween2013 .account_message {
+	margin-left: 435px;
+	margin-right: 0;
+	color: white;
+	font-weight: normal !important;
+}
+
+.halloween2013 .account_message_learnmore {
+	height:24px;
+	width:114px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_halloween/btn_start_browsing.png) no-repeat 0 0;
+}
+
+.halloween2013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* halloween2013: hack to override close button */
+.halloween2013 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-B39066.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.halloween2013 .account_message_close_img { display: none; }
+
+
+
+/* Holiday listening 2013 */
+.holiday2013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holiday2013 #accountMessageRibbon {
+	background: #89b9da;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holiday2013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+	min-width: 970px;
+}
+
+.holiday2013 .pandora_bar {
+
+	background:none !important;
+	background-image: url(/static/ribbon/2013_holiday/bg_holiday_2013.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+
+	width: 1590px;
+	position: absolute;
+	left: 50%;
+	margin-left: -795px;
+}
+
+.holiday2013 .account_message {
+	margin-left: 523px;
+	margin-right: 5px;
+	margin-top: -2px;
+	color: #005486;
+	text-shadow: 1px 1px 1px white !important;
+}
+
+.holiday2013 .account_message_learnmore {
+	height:24px;
+	width:94px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_holiday/btn_browse_now.png) no-repeat 0 0;
+}
+
+.holiday2013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* holiday2013: hack to override close button */
+.holiday2013 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-6BA2DC.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.holiday2013 .account_message_close_img { display: none; }
+
+
+
+/* Holiday P1 Gifting 2013 */
+.holidayp12013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp12013 #accountMessageRibbon {
+	background: #89b9da;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp12013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+	min-width: 970px;
+}
+
+.holidayp12013 .pandora_bar {
+
+	background:none !important;
+	background-image: url(/static/ribbon/2013_holiday_p1_gifting/bg_holiday_p1_gifting_2013.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+
+	width: 1590px;
+	position: absolute;
+	left: 50%;
+	margin-left: -795px;
+}
+
+.holidayp12013 .account_message {
+	margin-left: 523px;
+	margin-right: 5px;
+	margin-top: -2px;
+	color: #005486;
+	text-shadow: 1px 1px 1px white !important;
+}
+
+.holidayp12013 .account_message_learnmore {
+	height:24px;
+	width:94px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_holiday_p1_gifting/btn_learn_more.png) no-repeat 0 0;
+}
+
+.holidayp12013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* holidayp12013: hack to override close button */
+.holidayp12013 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-6BA2DC.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.holidayp12013 .account_message_close_img { display: none; }
+
+
+/* NYE 2013 */
+.nye2013 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.nye2013 #accountMessageRibbon {
+	background: #2A2A95;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.nye2013 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+	min-width: 970px;
+}
+
+.nye2013 .pandora_bar {
+
+	background:none !important;
+	background-image: url(/static/ribbon/2013_nye/bg_nye_2013.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+
+	width: 1200px;
+	position: absolute;
+	left: 50%;
+	margin-left: -600px;
+}
+
+.nye2013 .account_message {
+	margin-left: 345px;
+	margin-right: 5px;
+	margin-top: -2px;
+	color: white;
+	font-weight: normal !important;
+}
+
+.nye2013 .account_message_learnmore {
+	height:22px;
+	width:94px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2013_nye/btn_browse_now.png) no-repeat 0 0;
+}
+
+.nye2013 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* nye2013: hack to override close button */
+.nye2013 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-9C7BBB.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.nye2013 .account_message_close_img { display: none; }
+
+
+/* Valentine 2014 */
+.valentine2014 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2014 #accountMessageRibbon {
+	background: white;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2014 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2014 .pandora_bar {
+	height:28px !important;
+	padding:6px 0 !important;
+	margin:0 !important;
+}
+
+.valentine2014 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_valentine/bg_valentine_2014.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.valentine2014 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.valentine2014 .account_message {
+	margin-left: 316px; margin-right: 4px;
+	color: #2F5584;
+	letter-spacing: 0.03em !important; /* Only for valentine's day copy */
+}
+
+.valentine2014 .account_message_learnmore {
+	width:88px;
+	height:22px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_valentine/btn_browse_now.png) no-repeat 0 0;
+	margin-top: 0px;
+}
+
+.valentine2014 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* valentine2014: hack to override close button */
+.valentine2014 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-C6EAF9.png') top left no-repeat;
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+.valentine2014 .account_message_close_img { display: none; }
+
+
+/* Valentine 2014 - subscriber message */
+.valentine2014s .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2014s #accountMessageRibbon {
+	background: white;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2014s #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine2014s .pandora_bar {
+	height:28px !important;
+	padding:6px 0 !important;
+	margin:0 !important;
+}
+
+.valentine2014s #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_valentinep1/bg_valentinep1_2014.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.valentine2014s #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.valentine2014s .account_message {
+	margin-left: 316px; margin-right: 4px;
+	color: #00aeef;
+	font-weight: normal !important;
+}
+
+.valentine2014s .account_message_learnmore {
+	height:26px;
+	width:79px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_valentinep1/btn_shop_now.png) no-repeat 0 0;
+	margin-top: 0;
+}
+
+.valentine2014s .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+}
+/* valentine2014s: hack to override close button */
+.valentine2014s .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-C6EAF9.png') top left no-repeat;
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+.valentine2014s .account_message_close_img { display: none; }
+
+
+/* St Patrick's Day 2014 */
+.stpats2014 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.stpats2014 #accountMessageRibbon {
+	background: #056b0b;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.stpats2014 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.stpats2014 .pandora_bar {
+	height:28px !important;
+	padding:6px 0 !important;
+	margin:0 !important;
+}
+
+.stpats2014 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_stpats/bg_stpats_2014.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.stpats2014 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.stpats2014 .account_message {
+	margin-left: 300px; margin-right: 4px;
+	color: white;
+}
+
+.stpats2014 .account_message_learnmore {
+	height:22px;
+	width:90px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_stpats/btn_browse_now.png) no-repeat 0 0;
+}
+
+.stpats2014 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+}
+/* stpats2014: hack to override close button */
+.stpats2014 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-25-percent.png') top left no-repeat;
+	width: 26px;
+	height: 26px;
+	display: block;
+}
+.stpats2014 .account_message_close_img { display: none; }
+
+
+
+/* P1 (Summer) 2014 */
+.p1summer2014 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1summer2014 #accountMessageRibbon {
+	background: white;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1summer2014 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1summer2014 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.p1summer2014 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_summerp1/bg_summerp1_2014.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.p1summer2014 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.p1summer2014 .account_message {
+	margin-left: 270px; margin-right: 0;
+	letter-spacing: 0.03em !important;
+	color: #005486;
+}
+
+.p1summer2014 .account_message_learnmore {
+	height:25px;
+	width:103px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_summerp1/btn_upgrade_now.png) no-repeat 0 0;
+}
+
+.p1summer2014 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* p1summer2014: hack to override close button */
+.p1summer2014 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-C6EAF9.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.p1summer2014 .account_message_close_img { display: none; }
+
+
+/* P1 (Summer) 2014 */
+.p1halloween14 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1halloween14 #accountMessageRibbon {
+	background: #45276A;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1halloween14 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1halloween14 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.p1halloween14 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_halloweenp1/bg_halloweenp1_2014.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.p1halloween14 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.p1halloween14 .account_message {
+	margin-left: 393px; margin-right: 0;
+	letter-spacing: 0.04em !important;
+	color: white;
+}
+
+.p1halloween14 .account_message_learnmore {
+	height:25px;
+	width:103px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_halloweenp1/btn_upgrade_now.png) no-repeat 0 0;
+}
+
+.p1halloween14 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* p1halloween14: hack to override close button */
+.p1halloween14 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-050708.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.p1halloween14 .account_message_close_img { display: none; }
+
+
+/* P1 (Summer) 2014 */
+.halloween14 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.halloween14 #accountMessageRibbon {
+	background: #040405;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.halloween14 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.halloween14 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.halloween14 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_halloween/bg_halloween_2014.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.halloween14 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.halloween14 .account_message {
+	margin-left: 150px; margin-right: 0;
+	letter-spacing: 0.04em !important;
+	color: white;
+}
+
+.halloween14 .account_message_learnmore {
+	height:25px;
+	width:103px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_halloween/btn_start_browsing.png) no-repeat 0 0;
+}
+
+.halloween14 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* halloween14: hack to override close button */
+.halloween14 .account_message_close A {
+	background: transparent url('/static/ribbon/common/close_icon-1EA1DB.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.halloween14 .account_message_close_img { display: none; }
+
+
+/* Dinner Party (Thanksgiving) 2014 */
+.dinnerparty14 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.dinnerparty14 #accountMessageRibbon {
+	background: #EAD9B6;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.dinnerparty14 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.dinnerparty14 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.dinnerparty14 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_dinnerparty/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.dinnerparty14 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.dinnerparty14 .account_message {
+	margin-left: 170px; margin-right: 0;
+	letter-spacing: 0.04em !important;
+	color: #8B6C45;
+}
+
+.dinnerparty14 .account_message_learnmore {
+	height:22px;
+	width:169px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_dinnerparty/cta.png) no-repeat 0 0;
+}
+
+.dinnerparty14 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* dinnerparty14: hack to override close button */
+.dinnerparty14 .account_message_close A {
+	background: transparent url('/static/ribbon/2014_dinnerparty/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.dinnerparty14 .account_message_close_img { display: none; }
+
+
+/* Holiday 2014 */
+.holiday14 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holiday14 #accountMessageRibbon {
+	background: #99E5FD;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holiday14 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holiday14 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.holiday14 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_holiday/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.holiday14 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.holiday14 .account_message {
+	margin-left: 190px; margin-right: 5px;
+	letter-spacing: 0.04em !important;
+	color: #005486;
+}
+
+.holiday14 .account_message_learnmore {
+	height:22px;
+	width:141px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_holiday/cta.png) no-repeat 0 0;
+}
+
+.holiday14 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* holiday14: hack to override close button */
+.holiday14 .account_message_close A {
+	background: transparent url('/static/ribbon/2014_holiday/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.holiday14 .account_message_close_img { display: none; }
+
+
+/* Holiday P1 Gifting 2014 */
+.holidayp1g14 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp1g14 #accountMessageRibbon {
+	background: #035BB3;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp1g14 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp1g14 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.holidayp1g14 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_holiday_p1_gifting/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.holidayp1g14 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.holidayp1g14 .account_message {
+	margin-left: 285px; margin-right: 15px;
+	letter-spacing: 0.04em !important;
+	color: white;
+
+	font-size: 14px !important;
+	font-weight: normal !important;
+}
+
+.holidayp1g14 .account_message_learnmore {
+	height:22px;
+	width:81px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_holiday_p1_gifting/cta.png) no-repeat 0 0;
+}
+
+.holidayp1g14 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* holidayp1g14: hack to override close button */
+.holidayp1g14 .account_message_close A {
+	background: transparent url('/static/ribbon/2014_holiday_p1_gifting/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.holidayp1g14 .account_message_close_img { display: none; }
+
+
+/* Holiday P1 Acquisition 2014 */
+.holidayp114 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp114 #accountMessageRibbon {
+	background: #0456AF;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp114 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.holidayp114 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.holidayp114 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_holiday_p1/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.holidayp114 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.holidayp114 .account_message {
+	margin-left: 292px; margin-right: 15px;
+	letter-spacing: 0.04em !important;
+	color: white;
+
+	font-size: 14px !important;
+	font-weight: normal !important;
+}
+
+.holidayp114 .account_message_learnmore {
+	height:22px;
+	width:91px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_holiday_p1/cta.png) no-repeat 0 0;
+}
+
+.holidayp114 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* holidayp114: hack to override close button */
+.holidayp114 .account_message_close A {
+	background: transparent url('/static/ribbon/2014_holiday_p1/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.holidayp114 .account_message_close_img { display: none; }
+
+
+/* P1 Annual - Sunrise */
+.p1annualsunrise .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1annualsunrise #accountMessageRibbon {
+	background: #9AE5FD;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1annualsunrise #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.p1annualsunrise .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.p1annualsunrise #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_p1annualsunrise/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.p1annualsunrise #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.p1annualsunrise .account_message {
+	margin-left: 265px; margin-right: 15px;
+	letter-spacing: 0.02em !important;
+	color: #005486;
+
+	font-size: 14px !important;
+}
+
+.p1annualsunrise .account_message_learnmore {
+	height:23px;
+	width:91px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_p1annualsunrise/cta.png) no-repeat 0 0;
+}
+
+.p1annualsunrise .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* p1annualsunrise: hack to override close button */
+.p1annualsunrise .account_message_close A {
+	background: transparent url('/static/ribbon/2014_p1annualsunrise/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.p1annualsunrise .account_message_close_img { display: none; }
+
+/* 2014 End of Year */
+.endofyear14 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.endofyear14 #accountMessageRibbon {
+	background: #1163B3;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.endofyear14 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.endofyear14 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.endofyear14 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_endofyear/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.endofyear14 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.endofyear14 .account_message {
+	margin-left: 55px; margin-right: 10px;
+	letter-spacing: 0.02em !important;
+	color: white;
+
+	font-size: 14px !important;
+}
+
+.endofyear14 .account_message_learnmore {
+	height:23px;
+	width:122px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_endofyear/cta.png) no-repeat 0 0;
+}
+
+.endofyear14 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* endofyear14: hack to override close button */
+.endofyear14 .account_message_close A {
+	background: transparent url('/static/ribbon/2014_endofyear/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.endofyear14 .account_message_close_img { display: none; }
+
+
+/* 2014 NYE P1 */
+.nyep114 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.nyep114 #accountMessageRibbon {
+	background: #24044B;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.nyep114 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.nyep114 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.nyep114 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2014_nye_p1/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.nyep114 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.nyep114 .account_message {
+	margin-left: 225px; margin-right: 5px; margin-top: 2px;
+	letter-spacing: 0.02em !important;
+	color: white;
+
+	font-size: 14px !important;
+}
+
+.nyep114 .account_message_learnmore {
+	height:23px;
+	width:90px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2014_nye_p1/cta.png) no-repeat 0 0;
+}
+
+.nyep114 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* nyep114: hack to override close button */
+.nyep114 .account_message_close A {
+	background: transparent url('/static/ribbon/2014_nye_p1/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.nyep114 .account_message_close_img { display: none; }
+
+
+/* 2014 NYE P1 */
+.workout15 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.workout15 #accountMessageRibbon {
+	background: #0B2B5A;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.workout15 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.workout15 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.workout15 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2015_workout/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.workout15 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.workout15 .account_message {
+	margin-left: 215px; margin-right: 10px; margin-top: -1px;
+	letter-spacing: 0.02em !important;
+	word-spacing: 0.06em !important;
+	color: white;
+
+	font-size: 17px !important;
+	font-weight: lighter !important;
+}
+
+.workout15 .account_message_learnmore {
+	height:26px;
+	width:206px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2015_workout/cta.png) no-repeat 0 0;
+}
+
+.workout15 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* workout15: hack to override close button */
+.workout15 .account_message_close A {
+	background: transparent url('/static/ribbon/2015_workout/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.workout15 .account_message_close_img { display: none; }
+
+
+/* Grammys 2015 */
+.grammy15 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.grammy15 #accountMessageRibbon {
+	background: black;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.grammy15 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.grammy15 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.grammy15 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2015_grammys/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.grammy15 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.grammy15 .account_message {
+	margin-left: 170px; margin-right: 10px; margin-top: 1px;
+	letter-spacing: 0.02em !important;
+	word-spacing: 0.06em !important;
+	color: white;
+
+	font-size: 16px !important;
+	font-weight: lighter !important;
+}
+
+.grammy15 .account_message_learnmore {
+	height:26px;
+	width:206px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2015_grammys/cta.png) no-repeat 0 0;
+}
+
+.grammy15 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* grammy15: hack to override close button */
+.grammy15 .account_message_close A {
+	background: transparent url('/static/ribbon/2015_grammys/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.grammy15 .account_message_close_img { display: none; }
+
+
+/* Valentine's 2015 P1 */
+.valentine15p1 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine15p1 #accountMessageRibbon {
+	background: #9F23AF;
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine15p1 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.valentine15p1 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.valentine15p1 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	background-image: url(/static/ribbon/2015_valentinesp1/bg.png) !important;
+	background-repeat:  no-repeat !important;
+	background-position: 0 0 !important;
+	height:40px;
+}
+
+.valentine15p1 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1070px;
+	position:static !important;
+}
+
+.valentine15p1 .account_message {
+	margin-left: 245px; margin-right: 10px; margin-top: 2px;
+
+	word-spacing: 0.06em !important;
+	color: white;
+
+	font-size: 14px !important;
+}
+
+.valentine15p1 .account_message_learnmore {
+	height:51px;
+	width:127px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2015_valentinesp1/cta.png) no-repeat 0 0;
+
+	margin-top: -11px;
+}
+
+.valentine15p1 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* valentine15p1: hack to override close button */
+.valentine15p1 .account_message_close A {
+	background: transparent url('/static/ribbon/2015_valentinesp1/x.png') top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.valentine15p1 .account_message_close_img { display: none; }
+
+
+
+/* st paddy's 2015 P1 */
+.stpats15p1 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.stpats15p1 #accountMessageRibbon {
+  background: #00612e;
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.stpats15p1 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.stpats15p1 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.stpats15p1 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  background-image: url(/static/ribbon/2015_st_pattysp1/bg.png) !important;
+  background-repeat:  no-repeat !important;
+  background-position: 0 0 !important;
+  height:40px;
+}
+
+.stpats15p1 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.stpats15p1 .account_message {
+  font-weight: normal !important;
+  margin-left: 330px;
+  margin-right: 10px;
+  margin-top: 2px;
+
+  word-spacing: 0.06em !important;
+  color: white;
+
+  font-size: 14px !important;
+}
+
+.stpats15p1 .account_message_learnmore {
+  height:22px;
+  width:96px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_st_pattysp1/cta.png) no-repeat 0 0;
+}
+
+.stpats15p1 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* st paddys p1: hack to override close button */
+.stpats15p1 .account_message_close a {
+  background: transparent url('/static/ribbon/2015_st_pattysp1/x.png') top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.stpats15p1 .account_message_close_img { display: none; }
+
+
+
+
+/* st paddy's 2015 P1 */
+.stpats15 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.stpats15 #accountMessageRibbon {
+  background: #3ba275;
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.stpats15 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.stpats15 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.stpats15 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  background-image: url(/static/ribbon/2015_st_pattys/bg.jpg) !important;
+  background-repeat:  no-repeat !important;
+  background-position: 0 0 !important;
+  height:40px;
+}
+
+.stpats15 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.stpats15 .account_message {
+  font-weight: normal !important;
+  letter-spacing: 1px;
+  margin-left: 260px;
+  margin-right: 8px;
+  margin-top: -1px;
+
+  word-spacing: 0.06em !important;
+  color: white;
+
+  font-size: 18px !important;
+}
+
+.stpats15 .account_message_learnmore {
+  height:26px;
+  width:90px;
+  margin-top: -1px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_st_pattys/cta.png) no-repeat 0 0;
+}
+
+.stpats15 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* st paddys p1: hack to override close button */
+.stpats15 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_st_pattys/x.png) top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.stpats15 .account_message_close_img { display: none; }
+
+
+
+
+/* cinco de mayo 2015 P1 */
+.cinco15p1 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.cinco15p1 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color: #5c41a2;
+  background-image: url(/static/ribbon/2015_cinco/bg.jpg) !important;
+  background-repeat: repeat !important;
+  background-position: top center !important;
+}
+
+.cinco15p1 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.cinco15p1 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.cinco15p1 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  height:40px;
+}
+
+.cinco15p1 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.cinco15p1 .account_message {
+  background: url(/static/ribbon/2015_cinco/p1.png) no-repeat left center;
+  height: 30px;
+  line-height: 30px !important;
+  top: 0;
+  padding-left: 207px;
+
+  margin-top: 2px;
+  margin-left: 117px;
+  margin-right: 10px;
+
+  word-spacing: 0.06em !important;
+  color: white;
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.cinco15p1 .account_message_learnmore {
+  height:29px;
+  width:119px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_cinco/cta.png) no-repeat 0 0;
+}
+
+.cinco15p1 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* hack to override close button */
+.cinco15p1 .account_message_close a {
+  background: transparent url('/static/ribbon/2015_cinco/x.png') top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.cinco15p1 .account_message_close_img { display: none; }
+
+
+
+
+/* mother's day 2015 P1 */
+.mother15p1 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.mother15p1 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color: #d3f6f7;
+  background-image: url(/static/ribbon/2015_mother/bg.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+}
+
+.mother15p1 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.mother15p1 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.mother15p1 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  height:40px;
+}
+
+.mother15p1 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.mother15p1 .account_message {
+  background: url(/static/ribbon/2015_mother/p1.png) no-repeat left center;
+  height: 30px;
+  line-height: 30px !important;
+  top: 0;
+  padding-left: 207px;
+
+  margin-left: 65px;
+  margin-right: 10px;
+
+  word-spacing: 0.06em !important;
+  color: #0a9bc6;
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.mother15p1 .account_message_learnmore {
+  margin-top: -2px;
+  height:29px;
+  width:88px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_mother/cta.png) no-repeat 0 0;
+}
+
+.mother15p1 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* hack to override close button */
+.mother15p1 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_mother/x.png) top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.mother15p1 .account_message_close_img { display: none; }
+
+
+
+
+
+
+/* memorial day 2015 P1 */
+.memorial15p1 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.memorial15p1 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color: #0086f8;
+  background-image: url(/static/ribbon/2015_memorial/bg.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+}
+
+.memorial15p1 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.memorial15p1 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.memorial15p1 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  height:40px;
+}
+
+.memorial15p1 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.memorial15p1 .account_message {
+  background: url(/static/ribbon/2015_memorial/p1.png) no-repeat left center;
+  height: 30px;
+  line-height: 30px !important;
+  top: 0;
+  padding-left: 207px;
+
+  margin-left: 90px;
+  margin-right: 10px;
+
+  word-spacing: 0.06em !important;
+  color: #ffffff;
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.memorial15p1 .account_message_learnmore {
+  margin-top: -2px;
+  height:30px;
+  width:122px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_memorial/btn.png) no-repeat 0 0;
+}
+
+.memorial15p1 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* hack to override close button */
+.memorial15p1 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_memorial/x.png) top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.memorial15p1 .account_message_close_img { display: none; }
+
+
+
+
+
+/* summer 2015 P1 */
+.summer15p1 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.summer15p1 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color: #1694c7;
+  background-image: url(/static/ribbon/2015_summerp1/bg.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+}
+
+.summer15p1 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.summer15p1 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.summer15p1 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  height:40px;
+}
+
+.summer15p1 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.summer15p1 .account_message {
+  background: url(/static/ribbon/2015_summerp1/p1.png) no-repeat left center;
+  height: 30px;
+  line-height: 30px !important;
+  top: 0;
+  padding-left: 207px;
+
+  margin-left: 170px;
+  margin-right: 10px;
+
+  word-spacing: 0.06em !important;
+  color: #ffffff;
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.summer15p1 .account_message_learnmore {
+  margin-top: -2px;
+  height:30px;
+  width:122px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_summerp1/btn.png) no-repeat 0 0;
+}
+
+.summer15p1 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* hack to override close button */
+.summer15p1 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_summerp1/x.png) top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.summer15p1 .account_message_close_img { display: none; }
+
+
+
+
+
+/* 4th of july P1 */
+.july4thp1 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.july4thp1 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color: #2177c2;
+  background-image: url(/static/ribbon/2015_4thjuly/bg.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-position: top center !important;
+}
+
+.july4thp1 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.july4thp1 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.july4thp1 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  height:40px;
+}
+
+.july4thp1 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.july4thp1 .account_message {
+  background: url(/static/ribbon/2015_4thjuly/p1.png) no-repeat left center;
+  height: 30px;
+  line-height: 30px !important;
+  top: 0;
+  padding-left: 207px;
+
+  margin-left: 103px;
+  margin-right: 10px;
+
+  word-spacing: 0.06em !important;
+  color: #ffffff;
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.july4thp1 .account_message_learnmore {
+  margin-top: -2px;
+  height:30px;
+  width:122px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_4thjuly/btn.png) no-repeat 0 0;
+}
+
+.july4thp1 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* hack to override close button */
+.july4thp1 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_4thjuly/x.png) top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.july4thp1 .account_message_close_img { display: none; }
+
+
+
+
+
+
+.lateSummer2015 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.lateSummer2015 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color: #0da0c1;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0da0c1+0,0da0c1+50,7c499a+51,7c499a+100 */
+  background: url(/static/ribbon/2015_latesummer/bg.jpg) center no-repeat; /* Old browsers */
+  background: url(/static/ribbon/2015_latesummer/bg.jpg) center no-repeat, -moz-linear-gradient(left,  #0da0c1 0%, #0da0c1 50%, #7c499a 51%, #7c499a 100%) !important; /* FF3.6+ */
+  background: url(/static/ribbon/2015_latesummer/bg.jpg) center no-repeat, -webkit-gradient(linear, left top, right top, color-stop(0%,#0da0c1), color-stop(50%,#0da0c1), color-stop(51%,#7c499a), color-stop(100%,#7c499a)) !important; /* Chrome,Safari4+ */
+  background: url(/static/ribbon/2015_latesummer/bg.jpg) center no-repeat, -webkit-linear-gradient(left,  #0da0c1 0%,#0da0c1 50%,#7c499a 51%,#7c499a 100%) !important; /* Chrome10+,Safari5.1+ */
+  background: url(/static/ribbon/2015_latesummer/bg.jpg) center no-repeat, -o-linear-gradient(left,  #0da0c1 0%,#0da0c1 50%,#7c499a 51%,#7c499a 100%) !important; /* Opera 11.10+ */
+  background: url(/static/ribbon/2015_latesummer/bg.jpg) center no-repeat, -ms-linear-gradient(left,  #0da0c1 0%,#0da0c1 50%,#7c499a 51%,#7c499a 100%) !important; /* IE10+ */
+  background: url(/static/ribbon/2015_latesummer/bg.jpg) center no-repeat, linear-gradient(to right,  #0da0c1 0%,#0da0c1 50%,#7c499a 51%,#7c499a 100%) !important; /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0da0c1', endColorstr='#7c499a',GradientType=1 ); /* IE6-9 */
+}
+
+.lateSummer2015 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.lateSummer2015 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.lateSummer2015 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  height:40px;
+}
+
+.lateSummer2015 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1070px;
+  position:static !important;
+}
+
+.lateSummer2015 .account_message {
+  background: url(/static/ribbon/2015_latesummer/p1.png) no-repeat left center;
+  height: 30px;
+  line-height: 30px !important;
+  top: 0;
+  padding-left: 400px;
+  margin-left: 120px;
+  margin-right: 10px;
+
+  word-spacing: 0.06em !important;
+  color: transparent;
+  font-size: 14px !important;
+  font-weight: normal !important;
+}
+
+.lateSummer2015 .account_message_learnmore {
+  margin-top: -2px;
+  height:29px;
+  width:137px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_latesummer/btn.png) no-repeat 0 0;
+}
+
+.lateSummer2015 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* hack to override close button */
+.lateSummer2015 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_latesummer/x.png) top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.lateSummer2015 .account_message_close_img { display: none; }
+
+
+
+
+
+
+.adfree2015 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.adfree2015 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+  background: url(/static/ribbon/2015_adfree/bg.jpg) center no-repeat #045bbb; /* Old browsers */
+}
+
+.adfree2015 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.adfree2015 .pandora_bar {
+  height:28px !important;
+  padding:4px 0 !important;
+  margin:0 !important;
+}
+
+.adfree2015 #accountMessageRibbon .pandora_bar_container {
+  background:none !important;
+  height:40px;
+}
+
+.adfree2015 #pandoraAccountMessageOuterWrapper {
+  margin:0 auto !important;
+  width:1074px;
+  position:static !important;
+}
+
+.adfree2015 .account_message {
+  background: url(/static/ribbon/2015_adfree/txt.png) no-repeat left center;
+  height: 32px;
+  width: 0;
+  border-right: 1px solid #fff;
+  top: 0;
+  padding-left: 900px;
+  margin-right: 10px;
+  color: transparent;
+}
+
+.adfree2015 .account_message_learnmore {
+  margin-top: -1px;
+  height:29px;
+  width:102px;
+  text-indent:-9999px;
+  background: url(/static/ribbon/2015_adfree/btn.png) no-repeat 0 0;
+}
+
+.adfree2015 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+/* hack to override close button */
+.adfree2015 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_adfree/x.png) top left no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+.adfree2015 .account_message_close_img { display: none; }
+
+
+
+
+
+.halloween2015 .ribbonContent {
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.halloween2015 #accountMessageRibbon {
+	height: 40px;
+	padding:0 !important;
+	margin:0 !important;
+	background: url(/static/ribbon/2015_halloween/bg.png) center no-repeat black; /* Old browsers */
+}
+
+.halloween2015 #pandoraAccountMessageOuterWrapper {
+	height:40px !important;
+	padding:0 !important;
+	margin:0 !important;
+}
+
+.halloween2015 .pandora_bar {
+	height:28px !important;
+	padding:4px 0 !important;
+	margin:0 !important;
+}
+
+.halloween2015 #accountMessageRibbon .pandora_bar_container {
+	background:none !important;
+	height:40px;
+}
+
+.halloween2015 #pandoraAccountMessageOuterWrapper {
+	margin:0 auto !important;
+	width:1074px;
+	position:static !important;
+}
+
+.halloween2015 .account_message {
+	margin-left: 343px; margin-right: 5px; margin-top: 1px;
+	letter-spacing: 0.03em !important;
+	color: white;
+
+	font-weight: normal !important;
+	font-size: 14px !important;
+}
+
+.halloween2015 .account_message_learnmore {
+	margin-top: -3px;
+	height:33px;
+	width:122px;
+	text-indent:-9999px;
+	background: url(/static/ribbon/2015_halloween/btn.png) no-repeat 0 0;
+}
+
+.halloween2015 .account_message_close {
+	position: absolute;
+	right: 6px;
+	top: 9px;
+}
+/* hack to override close button */
+.halloween2015 .account_message_close a {
+	background: transparent url(/static/ribbon/2015_halloween/x.png) top left no-repeat;
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+.halloween2015 .account_message_close_img { display: none; }
+
+
+
+
+
+
+.thanksgiving2015 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.thanksgiving2015 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color   : #000;
+  background-image   : url(/static/ribbon/2015_thanksgiving/bg-left.jpg),
+                       url(/static/ribbon/2015_thanksgiving/bg-right.jpg);
+  background-repeat  : no-repeat,
+                       no-repeat;
+  background-position: left,
+                       right;
+}
+
+.thanksgiving2015 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.thanksgiving2015 .pandora_bar {
+  height: 32px !important;
+  padding:4px 0 !important;
+  text-align: center;
+}
+
+.thanksgiving2015 #accountMessageRibbon .pandora_bar_container {
+  background: none !important;
+  height: 40px;
+}
+
+.thanksgiving2015 .account_message {
+  display: none;
+}
+
+.thanksgiving2015 .account_message_learnmore {
+  background: url(/static/ribbon/2015_thanksgiving/txt.png) no-repeat 0 0;
+  float: none;
+  left: auto;
+  display: inline-block;
+  margin-top: -1px;
+  height: 29px;
+  width: 575px;
+}
+
+.thanksgiving2015 .account_message_learnmore img { display: none; }
+
+.thanksgiving2015 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+
+/* hack to override close button */
+.thanksgiving2015 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_thanksgiving/x.jpg) top left no-repeat;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+.thanksgiving2015 .account_message_close_img { display: none; }
+
+
+
+
+
+
+
+
+
+.dec2015 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.dec2015 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color   : #0065c1;
+  background-image   : url(/static/ribbon/2015_dec/bg.jpg);
+  background-repeat  : no-repeat;
+  background-position: center;
+}
+
+.dec2015 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.dec2015 .pandora_bar {
+  height: 32px !important;
+  padding:4px 0 !important;
+  text-align: center;
+}
+
+.dec2015 #accountMessageRibbon .pandora_bar_container {
+  background: none !important;
+  height: 40px;
+}
+
+.dec2015 .account_message {
+  display: none;
+}
+
+.dec2015 .account_message_learnmore {
+  background: url(/static/ribbon/2015_dec/txt.png) no-repeat 0 0;
+  float: none;
+  left: auto;
+  display: inline-block;
+  margin-top: -1px;
+  height: 31px;
+  width: 640px;
+}
+
+.dec2015 .account_message_learnmore img { display: none; }
+
+.dec2015 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 10px;
+}
+
+.dec2015 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_dec/x.png) top left no-repeat;
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.dec2015 .account_message_close_img { display: none; }
+
+
+
+
+
+
+.xmasadfree2015 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.xmasadfree2015 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color   : #224099;
+  background-image   : url(/static/ribbon/2015_xmasadfree/bg-left.jpg),
+                       url(/static/ribbon/2015_xmasadfree/bg-right.jpg);
+  background-repeat  : no-repeat,
+                       no-repeat;
+  background-position: left,
+                       right;
+}
+
+.xmasadfree2015 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.xmasadfree2015 .pandora_bar {
+  height: 32px !important;
+  padding:4px 0 !important;
+  text-align: center;
+}
+
+.xmasadfree2015 #accountMessageRibbon .pandora_bar_container {
+  background: none !important;
+  height: 40px;
+}
+
+.xmasadfree2015 .account_message {
+  display: none;
+}
+
+.xmasadfree2015 .account_message_learnmore {
+  background: url(/static/ribbon/2015_xmasadfree/txt.png) no-repeat 0 0;
+  float: none;
+  left: auto;
+  display: inline-block;
+  margin-top: -1px;
+  height: 31px;
+  width: 602px;
+}
+
+.xmasadfree2015 .account_message_learnmore img { display: none; }
+
+.xmasadfree2015 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 10px;
+}
+
+.xmasadfree2015 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_xmasadfree/x.png) top left no-repeat;
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.xmasadfree2015 .account_message_close_img { display: none; }
+
+
+
+
+.xmasgift2015 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.xmasgift2015 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color   : #0073bc;
+  background-image   : url(/static/ribbon/2015_xmasgift/bg.jpg);
+  background-repeat  : no-repeat;
+  background-position: center;
+}
+
+.xmasgift2015 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.xmasgift2015 .pandora_bar {
+  height: 32px !important;
+  padding:4px 0 !important;
+  text-align: center;
+}
+
+.xmasgift2015 #accountMessageRibbon .pandora_bar_container {
+  background: none !important;
+  height: 40px;
+}
+
+.xmasgift2015 .account_message {
+  display: none;
+}
+
+.xmasgift2015 .account_message_learnmore {
+  background: url(/static/ribbon/2015_xmasgift/txt.png) no-repeat 0 0;
+  float: none;
+  left: auto;
+  display: inline-block;
+  margin-top: -1px;
+  height: 31px;
+  width: 707px;
+}
+
+.xmasgift2015 .account_message_learnmore img { display: none; }
+
+.xmasgift2015 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 10px;
+}
+
+.xmasgift2015 .account_message_close a {
+  background: transparent url(/static/ribbon/2015_xmasgift/x.png) top left no-repeat;
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+.xmasgift2015 .account_message_close_img { display: none; }
+
+
+
+
+
+
+.vday2016 .ribbonContent {
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.vday2016 #accountMessageRibbon {
+  height: 40px;
+  padding:0 !important;
+  margin:0 !important;
+
+  background-color   : #c9b694;
+  background-image   : url(/static/ribbon/2016_vday/bg.jpg);
+  background-repeat  : no-repeat;
+  background-position: center;
+}
+
+.vday2016 #pandoraAccountMessageOuterWrapper {
+  height:40px !important;
+  padding:0 !important;
+  margin:0 !important;
+}
+
+.vday2016 .pandora_bar {
+  height: 40px !important;
+  padding: 0 !important;
+  text-align: center;
+}
+
+.vday2016 #accountMessageRibbon .pandora_bar_container {
+  background: none !important;
+  height: 40px;
+}
+
+.vday2016 .account_message {
+  display: none;
+}
+
+.vday2016 .account_message_learnmore {
+  background: url(/static/ribbon/2016_vday/txt.png) no-repeat center;
+  float: none;
+  left: auto;
+  top: 0;
+  display: inline-block;
+  height: 40px;
+  width: 800px;
+}
+
+.vday2016 .account_message_learnmore img { display: none; }
+
+.vday2016 .account_message_close {
+  position: absolute;
+  right: 6px;
+  top: 10px;
+}
+
+.vday2016 .account_message_close a {
+  background: transparent url(/static/ribbon/2016_vday/x.png) top left no-repeat;
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+.vday2016 .account_message_close_img { display: none; }

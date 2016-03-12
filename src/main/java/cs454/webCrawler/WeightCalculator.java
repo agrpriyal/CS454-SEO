@@ -22,7 +22,6 @@ public class WeightCalculator {
 		this.numberOfDocuments = numberOfDocuments;
 		this.documents = JObj;
 		listUniqueWords();
-		
 		for (String keyword: listOfUniqueWords){
 			calcScores(documents, keyword);
 		}
@@ -53,12 +52,16 @@ public class WeightCalculator {
 			String key = (String) iterator.next();
 			JSONObject documentWords = (JSONObject) documentsIn.get(key);
 			if(documentWords.containsKey(keyword)){
+				try{
 				occurencesInDocuments++;
 				documentWords.put("document name", key.toString());
 				JSONObject positionGet = (JSONObject) documentWords.get(keyword);
-				//System.out.println(positionGet.get("position"));
 				documentWords.put("position", positionGet.get("position"));
 				documentsContainWord.add(documentWords);
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
 			}
 		}
 		for (JSONObject currentObj: documentsContainWord){

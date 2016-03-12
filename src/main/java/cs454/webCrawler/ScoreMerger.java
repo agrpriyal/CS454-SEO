@@ -1,11 +1,13 @@
 package cs454.webCrawler;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.tika.exception.TikaException;
 import org.json.JSONException;
@@ -57,12 +59,19 @@ static JSONArray jsonArray = new JSONArray();
 		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
 		String pretJson = prettyGson.toJson(merged);
 		String path = "C:/Users/Volfurious/Desktop/json/score json.txt";
-		try(FileWriter outputJson = new FileWriter(path, true)){
+		try(FileWriter outputJson = new FileWriter(path, false)){
 			outputJson.write(pretJson.toString());
 			outputJson.write("\n\n");
 			outputJson.flush();
 			outputJson.close();
 		}
 
+		Properties properties = new Properties();
+
+		for (Map.Entry<String,String> entry : urlMap.entrySet()) {
+		    properties.put(entry.getKey(), entry.getValue());
+		}
+
+		properties.store(new FileOutputStream("map.properties"), null);
     }
 }
