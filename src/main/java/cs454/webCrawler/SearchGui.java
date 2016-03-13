@@ -3,6 +3,9 @@ package cs454.webCrawler;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,6 +20,7 @@ import java.util.Set;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -40,6 +44,7 @@ public class SearchGui extends Application{
 	private static Map<String, String> urlMap = new HashMap<String, String>();
 	private static Map<Integer, Hyperlink> hyperMap = new HashMap<Integer, Hyperlink>();
 	private static Map<String, Double> pageTotalScore = new HashMap<String, Double>();
+	private static List<Hyperlink> hyperLinks = new ArrayList<Hyperlink>();
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -101,6 +106,10 @@ public class SearchGui extends Application{
 		submit.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<Event>(){
 			@Override
 			public void handle(Event event) {
+				for (Hyperlink clearThis: hyperLinks){
+					clearThis.setText("");
+				}
+				hyperLinks.clear();
 				pageTotalScore.clear();
 				String userText = text.getText().toLowerCase();
 				List<String> userWords = new LinkedList<String>(Arrays.asList(userText.split(" ")));
@@ -115,6 +124,7 @@ public class SearchGui extends Application{
 					}
 					else{
 					final Hyperlink link = hyperMap.get(i);
+					hyperLinks.add(link);
 						link.setText(allUrl.get(i));
 						link.setOnAction(new EventHandler<ActionEvent>(){
 							public void handle(ActionEvent t){

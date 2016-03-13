@@ -1,13 +1,19 @@
 package cs454.webCrawler;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
@@ -20,34 +26,69 @@ import org.xml.sax.SAXException;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 
 public class demo {
 	static JSONArray jsonArray = new JSONArray();
-	
+	static List<File> allHtmlFiles = new ArrayList<File>();
+	static Map<String, JSONObject> jsonMap = new HashMap<String, JSONObject>();
+	static Map<String, Word> wordMap = new HashMap<String, Word>();
 	@SuppressWarnings("unchecked")
 	public static void main( String[] args ) throws IOException, SAXException, TikaException, ParseException, JSONException
     {
 		//C:/Users/Volfurious/Desktop/test/content/files
 		//C:\Users\Volfurious\Desktop\linktest
-		String filePath = "C:/Users/Volfurious/Desktop/test/content/files";
-		File file = new File(filePath);//folder path
+		//C:/Users/Volfurious/Desktop/en
+	
+		
+		String filePath = "C:/Users/Volfurious/Desktop/json/tfidf.json";
+		BufferedReader br = new BufferedReader(new FileReader(filePath));
+		Gson gson = new GsonBuilder().create();
+		DocumentPage scoreInfo = gson.fromJson(br, DocumentPage.class);
+		//HashMap<String, HashMap<String, WordInfo>> tempMap = gson.fromJson(br, HashMap.class);
+		//JSONObject theObject = (JSONObject) tempMap.get("4-2-2.html");
+		System.out.println(scoreInfo.getCompleteMap().toString());
+		
+		
+		/*
+		File file = new File("C:/Users/Volfurious/Desktop/linktest");//folder path
 		File[] htmlFiles = file.listFiles(new FilenameFilter(){
 			public boolean accept(File dir, String name){
 				return name.endsWith("html");
 			}
 		});
 		
+		
+		//crawl(filePath);
+		
 		int fileCounter = 0;
 		JSONObject finalObj = new JSONObject();
+		JSONObject innerObj = new JSONObject();
 		for (File f: htmlFiles){
 			WordCounter word = new WordCounter(f);
-			finalObj.put(f.getName(), word.getJson());
+			innerObj.put(f.getName(), word.getJson());
+			jsonMap.put(f.getName(), word.getJson());
 			fileCounter++;
 		}
+		finalObj.put("completeMap", innerObj);
 		System.out.println(fileCounter);
-		WeightCalculator wc = new WeightCalculator(finalObj, fileCounter);
-		JSONObject objTemp = wc.getNormalizedJson();
-
+		
+		
+		Gson prettyGson = new GsonBuilder().setPrettyPrinting().create();
+		String pretJson = prettyGson.toJson(finalObj);
+		String path = "C:/Users/Volfurious/Desktop/json/tfidf23.txt";
+		try(FileWriter outputJson = new FileWriter(path, true)){
+			outputJson.write(pretJson.toString());
+			outputJson.write("\n\n");
+			outputJson.flush();
+			outputJson.close();
+		}
+		System.out.println("File output successful");
+		*/
+		
+		//WeightCalculator wc = new WeightCalculator("C:/Users/Volfurious/Desktop/json/tfidf.json", 50);
+		//JSONObject objTemp = wc.getNormalizedJson();
+		/*
 		//in roder to test link analysis, you need to supply the mapping of document name with the document's URL. (WebAdress)
 		//program will receive an error if the size of the urlMap doesn't match the number of documents in the directory folder.
 		Map<String, String> urlMap = new HashMap<String, String>();
@@ -84,6 +125,7 @@ public class demo {
 			outputJson.flush();
 			outputJson.close();
 		}
+		*/
 		/*
 		Properties properties = new Properties();
 
@@ -129,4 +171,27 @@ public class demo {
 		
 		//Gradle crawler -Parguments="['http://www.samsung.com/']" -Duser.dir="c:\crawler3"
     }
+	
+	public static void crawl(String path){
+		File location = new File(path);
+		File[] allFiles = location.listFiles();
+		if (allFiles.length == 0){
+			return;
+		}
+		for (File file : allFiles){
+			if (file.isDirectory()){
+				crawl(file.getAbsolutePath());
+			}
+			else {
+				allHtmlFiles.add(file);
+			}
+		}
+	}
+	public void readJsonStream(InputStream in) throws IOException {
+		JsonReader reader = new JsonReader(new InputStreamReader(in, "UTF-8"));
+		reader.beginArray();
+		reader.endArray();
+		reader.close();
+		
+	}
 }

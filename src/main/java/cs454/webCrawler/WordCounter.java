@@ -44,7 +44,7 @@ public class WordCounter {
 
 	//Removes all html tags, and return the html as plain text
 	public String getText(InputStream input) throws IOException, SAXException, TikaException{
-		ContentHandler handler = new BodyContentHandler();
+		ContentHandler handler = new BodyContentHandler(-1);
 		Metadata metadata = new Metadata();
 		new HtmlParser().parse(input, handler, metadata, new ParseContext());
 		String htmlText = handler.toString();

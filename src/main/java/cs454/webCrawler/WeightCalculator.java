@@ -1,12 +1,25 @@
 package cs454.webCrawler;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.json.simple.JSONObject;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
 
 public class WeightCalculator {
 
@@ -18,13 +31,32 @@ public class WeightCalculator {
 	private List<JSONObject> jsonList = new ArrayList<JSONObject>();
 	private List<JSONObject> normalizedJsonList = new ArrayList<JSONObject>();
 	
-	public WeightCalculator(JSONObject JObj, int numberOfDocuments){
+	public WeightCalculator(String path, int numberOfDocuments){
 		this.numberOfDocuments = numberOfDocuments;
-		this.documents = JObj;
+		InputStream in;
+			//System.out.println(completeList.getCompleteMap().get("32nd_United_States_Congress_-_State_Delegations_cfeb.html"));
+			//System.out.println(completeList.getCompleteMap().get("Toby_Johnson_d25e.html").get("registered").getWord());
+
+		/*
+		try {
+			InputStream input = new FileInputStream(path);
+			try {
+				readJsonStream(input);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		*/
+		/*
 		listUniqueWords();
 		for (String keyword: listOfUniqueWords){
 			calcScores(documents, keyword);
 		}
+		*/
+		
+		
 		
 	}
 	
@@ -148,4 +180,5 @@ public class WeightCalculator {
 	public List<JSONObject> getList(){
 		return jsonList;
 	}
+	
 }

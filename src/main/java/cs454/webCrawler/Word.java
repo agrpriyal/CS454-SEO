@@ -3,7 +3,7 @@ package cs454.webCrawler;
 public class Word {
 	private String document;
 	private double tfidf;
-	//private int[] position;
+	private int[] position;
 	public String getDocument() {
 		return document;
 	}
@@ -16,12 +16,12 @@ public class Word {
 	public void setTfidf(double tfidf) {
 		this.tfidf = tfidf;
 	}
-	/*
+	
 	public int[] getPosition() {
 		return position;
 	}
 	public void setPosition(int[] position) {
 		this.position = position;
 	}
-	*/
+	
 }
